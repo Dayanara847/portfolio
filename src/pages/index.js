@@ -101,9 +101,9 @@ const IndexPage = () => {
     <div>
     <title>Dayanara Maurin</title>
       <GlobalStyle />
-      <Background
+{/*       <Background
         style={{ transform: `translateY(-${offsetY * 0.5}px)` }}
-      />
+      /> */}
       <BackgroundUpper
         style={{ transform: `translateY(${offsetY * 0.5}px)` }}
       />
