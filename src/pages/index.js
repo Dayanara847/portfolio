@@ -4,8 +4,10 @@ import Projects from '../components/projects';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
+import bgBlue from '../../public/background2.png';
 import bgUpper from '../../public/background-upper.png';
 import bg from '../../public/background.png';
+
 import rock from '../images/rock.png';
 import fallingDown from '../images/fallingDown.png';
 import fallingDownTop from '../images/fallingDownTop.png';

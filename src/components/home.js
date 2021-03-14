@@ -17,7 +17,7 @@ const Header = styled.h1`
   font-family: Arial;
 `
 const StyledText = styled.span`
-  color: palevioletred;
+  color: rgb(1, 180, 240);
 `
 
 // markup
