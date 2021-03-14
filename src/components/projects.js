@@ -1,29 +1,15 @@
 import * as React from "react";
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import climaFirst from '../images/clima1.png';
-import climaSecond from '../images/clima3.png';
-import climaThird from '../images/clima4.png';
-
 import wineFirst from '../images/wine1.png';
-import wineSecond from '../images/wine2.png';
-import wineThird from '../images/wine3.png';
-import wineFourth from '../images/wine4.png';
-
 import quizWeb from '../images/quizAppWeb.png';
-
-import quizFirst from '../images/quiz1.png';
-import quizSecond from '../images/quiz2.png';
-import quizThird from '../images/quiz3.png';
-import quizFourth from '../images/quiz4.png';
-import quizFifth from '../images/quiz5.png';
-import quizSixth from '../images/quiz6.png';
-
 import psicoWeb from '../images/psicoWeb.png';
 
 // styles
 const ProjectsContainer = styled.div`
   width: 100vw;
+  height: 70vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,17 +24,14 @@ const Project = styled.div`
   align-items: center;
   margin: 1vw;
   width: 55vw;
-  height: 45vw;
 `
 const ProjectHeader = styled.h1`
   z-index: 2;
-  color: white;
   font-size: 2.5vw;
   font-family: Arial;
 `
 const ProjectSubtitle = styled.h3`
   z-index: 2;
-  color: white;
   padding-top: 1vw;
   font-family: Arial;
 `
@@ -56,12 +39,9 @@ const IndividualContainer = styled.div`
   height: 31vw;
   margin: 1vw;
   text-align: center;
-  background-color: rgb(255, 255, 255, 0.1);
+  background-color: rgb(0, 0, 0, 0.1);
   overflow: hidden;
-
-  &:hover {
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
-  }
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `
 const BlindContainer = styled.div`
   margin-top: -31vw;
@@ -69,16 +49,16 @@ const BlindContainer = styled.div`
   ${IndividualContainer}:hover & {
     margin-top: 0vw;
     -webkit-transition-property: margin-top;
-    -webkit-transition-duration: .5s;
+    -webkit-transition-duration: 1s;
    
     -moz-transition-property: margin-top;
-    -moz-transition-duration: .5s;
+    -moz-transition-duration: 1s;
    
     -o-transition-property: margin-top;
-    -o-transition-duration: .5s;
+    -o-transition-duration: 1s;
    
     -ms-transition-property: margin-top;
-    -ms-transition-duration: .5s;
+    -ms-transition-duration: 1s;
   }
 `
 const Blind = styled.div`
@@ -88,32 +68,23 @@ const Blind = styled.div`
   background-color: gray;
 `
 const Tecnologies = styled.div`
-  padding-top: 2vw;
-  height: 7vw;
+  height: 5.5vw;
 `
 const Tecnology = styled.p`
-  display: none;
+  display: inline-block;
   font-family: Arial;
   font-size: 0.8vw;
   background-color: rgb(255, 255, 255, 0.6);
   padding: 0.3vw 0.55vw;
   margin: 0.5vw;
   border-radius: 10vw;
-
-  ${IndividualContainer}:hover & {
-    display: inline-block;
-  }
 `
-const OneTecnology = styled(Tecnology)`
-  margin-top: 3vw;
-
-  ${IndividualContainer}:hover & {
-    display: inline-block;
-  }
+const Buttons = styled.div`
+  height: 10.5vw;
+  display: inline-block;
+  padding-top: 1vw;
 `
 const ProjectInfo = styled.p `
-  z-index: 2;
-  color: white;
   padding: 0 0.8vw;
   font-size: 0.9vw;
   font-family: Arial;
@@ -155,13 +126,45 @@ const ButtonsInfo = styled.div`
   z-index: 2;
   position: absolute;
   width: 25.5vw;
-  height: 14vw;
+  height: 31vw;
+  opacity: 0;
+
+  ${IndividualContainer}:hover & {
+    opacity: 100;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 3s;
+   
+    -moz-transition-property: opacity;
+    -moz-transition-duration: 3s;
+   
+    -o-transition-property: opacity;
+    -o-transition-duration: 3s;
+   
+    -ms-transition-property: opacity;
+    -ms-transition-duration: 3s;
+  }
 `
 const ButtonsInfoUp = styled(ButtonsInfo)`
   top: 71vw;
 `
 const ButtonsInfoDown = styled(ButtonsInfo)`
-  top: 97vw;
+  top: 102.5vw;
+`
+const ProjectSubtitleBlind = styled(ProjectSubtitle)`
+  color: white;
+  padding-top: 3vw;
+  font-size: 1.5vw;
+`
+const ProjectSubtitleBlindWine = styled(ProjectSubtitleBlind)`
+  font-family: AlexBrushRegular;
+  font-size: 2vw;
+`
+const ProjectSubtitleBlindPsico = styled(ProjectSubtitleBlind)`
+  font-family: JosefinBold;
+  padding-top: 3.4vw;
+`
+const ProjectSubtitleBlindQuiz = styled(ProjectSubtitleBlind)`
+  font-family: PoorRichard;
 `
 
 // markup
@@ -186,6 +189,7 @@ const Projects = () => {
           </ProjectInfo>
           {/* Container tecnologies & buttons/links */}
           <ButtonsInfoUp>
+            <ProjectSubtitleBlindWine>Wine store</ProjectSubtitleBlindWine>
             <Tecnologies>
               <Tecnology>React</Tecnology>
               <Tecnology>Redux</Tecnology>
@@ -195,10 +199,10 @@ const Projects = () => {
               <Tecnology>Sequelize</Tecnology>
             </Tecnologies>
             {/* Button link Repository and deploy */}
-            <div>
+            <Buttons>
               <ProjectButton href="https://github.com/Dayanara847/ecommerce_winestore">Ver repositorio</ProjectButton>
               <ProjectButton href="https://web-comm.vercel.app/">Visitar</ProjectButton>
-            </div>
+            </Buttons>
           </ButtonsInfoUp>
           </BlindContainer>
         </IndividualContainer>
@@ -218,6 +222,7 @@ const Projects = () => {
           </ProjectInfo>
           {/* Container tecnologies & buttons/links */}
           <ButtonsInfoDown>
+            <ProjectSubtitleBlindQuiz>QuizApp</ProjectSubtitleBlindQuiz>
             <Tecnologies>
               <Tecnology>React</Tecnology>
               <Tecnology>Express</Tecnology>
@@ -229,12 +234,12 @@ const Projects = () => {
               <Tecnology>Angular</Tecnology>
             </Tecnologies>
             {/* Button link Repository and deploy */}
-            <div>
+            <Buttons>
               <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio WEB</ProjectButton>
               <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio APP</ProjectButton>
               <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio BACK</ProjectButton>
               <ProjectButton href="https://quizapp-web-ten.vercel.app/">Visitar</ProjectButton>
-            </div>
+            </Buttons>
           </ButtonsInfoDown>
           </BlindContainer>
         </IndividualContainer>
@@ -254,15 +259,17 @@ const Projects = () => {
           </ProjectInfo>
           {/* Container tecnologies & buttons/links */}
           <ButtonsInfoUp>
+            <ProjectSubtitleBlind>Clima App</ProjectSubtitleBlind>
             <Tecnologies>
-              <OneTecnology>React</OneTecnology>
+              <Tecnology>React</Tecnology>
               <Tecnology>JavaScript</Tecnology>
+              <Tecnology>CSS modules</Tecnology>
             </Tecnologies>
             {/* Button link Repository and deploy */}
-            <div>
+            <Buttons>
               <ProjectButton href="https://github.com/Dayanara847/climaApp">Ver repositorio</ProjectButton>
               <ProjectButton href="https://clima-app-theta.vercel.app/">Visitar</ProjectButton>
-            </div>
+            </Buttons>
           </ButtonsInfoUp>
           </BlindContainer>
         </IndividualContainer>
@@ -270,7 +277,7 @@ const Projects = () => {
           <BlindContainer>
             <Blind></Blind>
           {/* Container project of WEB PSICÓLOGO */}
-          <ProjectSubtitle>Web psicólogo</ProjectSubtitle>
+          <ProjectSubtitle>Dr. Alejandro Cifuentes</ProjectSubtitle>
           <ProjectImage src={psicoWeb} alt="Web psicólogo" />
           <ProjectInfo>Web personal de profesional de psicología.
             <ul>
@@ -280,15 +287,17 @@ const Projects = () => {
           </ProjectInfo>
           {/* Container tecnologies & buttons/links */}
           <ButtonsInfoDown>
+            <ProjectSubtitleBlindPsico>Dr. Alejandro Cifuentes</ProjectSubtitleBlindPsico>
             <Tecnologies>
               <Tecnology>JavaScript</Tecnology>
-              <OneTecnology>React</OneTecnology>
+              <Tecnology>CSS modules</Tecnology>
+              <Tecnology>React</Tecnology>
             </Tecnologies>
             {/* Button link Repository and deploy */}
-            <div>
+            <Buttons>
               <ProjectButton href="https://github.com/Dayanara847/drcifuFRONTEND">Ver repositorio</ProjectButton>
               <ProjectButton href="https://drcifu-frontend.vercel.app/">Visitar</ProjectButton>
-              </div>
+              </Buttons>
           </ButtonsInfoDown>
           </BlindContainer>
         </IndividualContainer>

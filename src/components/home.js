@@ -1,7 +1,6 @@
 import * as React from "react";
 import styled from 'styled-components';
 
-// styles
 const MainContainer = styled.div`
   width: 100vw;
   display: flex;
@@ -12,7 +11,6 @@ const MainContainer = styled.div`
 `
 const Header = styled.h1`
   z-index: 2;
-  color: white;
   font-size: 2.5vw;
   font-family: Arial;
 `
