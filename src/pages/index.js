@@ -1,29 +1,40 @@
-import * as React from "react";
-import Home from '../components/home';
-import Projects from '../components/projects';
+import * as React from 'react';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
+// components
+import Home from '../components/home';
+import Projects from '../components/projects';
+import Contact from '../components/contact';
+import Tecnologies from '../components/tecnologies';
+import Women from '../components/women';
+
+// backgrounds
 import bgSkyBlue from '../../public/bgSkyBlue.png';
 import bgUpper from '../../public/background-upper.png';
 
-import rock from '../images/rock.png';
-import fallingDown from '../images/fallingDown.png';
-import fallingDownTop from '../images/fallingDownTop.png';
-import jumper from '../images/jumping.png';
-import runner from '../images/running.png';
-import sitting from '../images/sitting.png';
-
+// fonts
 import AlexBrushRegular from '../fonts/AlexBrush-Regular.ttf';
 import JosefinBold from '../fonts/JosefinSlab-Bold.ttf';
-import PoorRichard from '../fonts/PoorRichard.otf'
+import PoorRichard from '../fonts/PoorRichard.otf';
+import Corbel from '../fonts/corbel.ttf';
+import TwCenMt from '../fonts/tw-cen-mt.ttf';
+import GillSansUltraBold from '../fonts/gill-sans-ultra-bold.ttf';
+import Dubai from '../fonts/dubai.ttf';
+import MicrosoftYiBaiti from '../fonts/microsoft-yi-baiti.ttf';
+import LeelawadeeUi from '../fonts/leelawadee-ui.ttf';
+import SansSerif from '../fonts/sans-serif.ttf';
 
-// styles
-const GlobalStyle = createGlobalStyle`
+/* const GlobalStyle = createGlobalStyle`
   html, body {
     display: flex;
     flex-direction: column;
-    width: 1980px;
+    margin: 0;
+    overflow-x: hidden;
+  } */
+  // styles
+  const GlobalStyle = createGlobalStyle`
+  body {
     margin: 0;
     overflow-x: hidden;
   }
@@ -39,65 +50,55 @@ const GlobalStyle = createGlobalStyle`
     font-family: PoorRichard;
     src: url(${PoorRichard});
   }
+  @font-face {
+    font-family: TwCenMt;
+    src: url(${TwCenMt});
+  }
+  @font-face {
+    font-family: Corbel;
+    src: url(${Corbel});
+  }
+  @font-face {
+    font-family: GillSansUltraBold;
+    src: url(${GillSansUltraBold});
+  }
+  @font-face {
+    font-family: Dubai;
+    src: url(${Dubai});
+  }
+  @font-face {
+    font-family: MicrosoftYiBaiti;
+    src: url(${MicrosoftYiBaiti});
+  }
+  @font-face {
+    font-family: LeelawadeeUi;
+    src: url(${LeelawadeeUi});
+  }
+  @font-face {
+    font-family: SansSerif;
+    src: url(${SansSerif});
+  }
 `
-const Background = styled.div`
-background: url(${bgSkyBlue});
+const GlobalContainer = styled.section`
+display: flex;
+flex-direction: column;
+max-width: 100%;
+`
+const Background = styled.img`
+width: 100vw;
+height: 3940px;
+background-repeat: no-repeat;
 background-size: contain;
-height: 3520px;
-width: 1980px;
 position: absolute;
-box-sizing: border-box;
+background: url(${bgSkyBlue});
 `
-const BackgroundUpper = styled.div`
+const BackgroundUpper = styled.img`
+width: 100vw;
+height: 5100px;
+background-repeat: no-repeat;
+background-size: contain;
+position: absolute;
 background: url(${bgUpper});
-background-size: cover;
-height: 2000px;
-width: 1980px;
-position: absolute;
-box-sizing: border-box;
-`
-const Rock = styled.img`
-position: absolute;
-top: 34.3vw;
-left: -0.5vw;
-width: 10vw;
-transform: ${prop => `translateY(${-prop.offsetY / 30}rem)`};
-`
-const Runner = styled.img`
-position: absolute;
-top: 29.5vw;
-left: 1vw;
-width: 4vw;
-display: ${prop => prop.offsetY < 150 ? 'inline' : 'none'};
-transform: ${prop => `translate(${prop.offsetY / 50}rem, ${-prop.offsetY / 30}rem)`};
-`
-const Jumper = styled.img`
-position: absolute;
-top: 20vw;
-left: 11vw;
-width: 4vw;
-display: ${prop => prop.offsetY < 150 ? 'none' : 'inline'};
-`
-const FallingDownTop = styled.img`
-position: absolute;
-top: 80vw;
-left: 11vw;
-width: 5vw;
-display: ${prop => prop.offsetY < 350 ? 'none' : 'inline'};
-`
-const FallingDown = styled.img`
-position: absolute;
-top: 140rem;
-left: 11rem;
-width: 5rem;
-display: ${prop => prop.offsetY < 1400 ? 'none' : 'inline'};
-`
-const Sitting = styled.img`
-position: absolute;
-top: 198rem;
-left: 11rem;
-width: 5rem;
-display: ${prop => prop.offsetY < 2400 ? 'none' : 'inline'};
 `
 
 const IndexPage = () => {
@@ -112,24 +113,21 @@ const IndexPage = () => {
   }, [offsetY]);
 
   return (
-    <div>
-    <title>Dayanara Maurin</title>
+    <GlobalContainer>
+      <title>Dayanara Maurin</title>
       <GlobalStyle />
-      <Background
+       <Background
         style={{ transform: `translateY(-${offsetY * 0.1}px)` }}
       />
       <BackgroundUpper
         style={{ transform: `translateY(-${offsetY * 0.5}px)` }}
       />
-      <Rock offsetY={offsetY} src={rock} alt="" />
-      <Runner offsetY={offsetY} src={runner} alt="" />
-      <Jumper offsetY={offsetY} src={jumper} alt="" />
-      <FallingDownTop offsetY={offsetY} src={fallingDownTop} alt="" />
-      <FallingDown offsetY={offsetY} src={fallingDown} alt="" />
-      <Sitting offsetY={offsetY} src={sitting} alt="" />
+      <Women offsetY={offsetY} />
       <Home />
       <Projects />
-    </div>
+      <Tecnologies />
+      <Contact/>
+    </GlobalContainer>
   )
 }
 

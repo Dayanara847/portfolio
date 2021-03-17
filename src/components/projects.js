@@ -1,10 +1,10 @@
 import * as React from "react";
 import styled from 'styled-components';
 
-import climaFirst from '../images/clima1.png';
-import wineFirst from '../images/wine1.png';
-import quizWeb from '../images/quizAppWeb.png';
-import psicoWeb from '../images/psicoWeb.png';
+import climaFirst from '../images/projects/clima1.png';
+import wineFirst from '../images/projects/wine1.png';
+import quizWeb from '../images/projects/quizAppWeb.png';
+import psicoWeb from '../images/projects/psicoWeb.png';
 
 // styles
 const ProjectsContainer = styled.div`
@@ -36,16 +36,20 @@ const ProjectSubtitle = styled.h3`
   font-family: Arial;
 `
 const IndividualContainer = styled.div`
-  height: 31vw;
+  height: 28vw;
   margin: 1vw;
   text-align: center;
-  background-color: rgb(0, 0, 0, 0.1);
   overflow: hidden;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-`
-const BlindContainer = styled.div`
-  margin-top: -31vw;
+  border: rgba(0, 0, 0, 0.2) solid 0.1vw;
+  border-radius: 1vw;
 
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  `
+  const BlindContainer = styled.div`
+  margin-top: -31vw;
+  
   ${IndividualContainer}:hover & {
     margin-top: 0vw;
     -webkit-transition-property: margin-top;
@@ -69,12 +73,13 @@ const Blind = styled.div`
 `
 const Tecnologies = styled.div`
   height: 5.5vw;
+  padding-top: 1vw;
 `
 const Tecnology = styled.p`
   display: inline-block;
   font-family: Arial;
   font-size: 0.8vw;
-  background-color: rgb(255, 255, 255, 0.6);
+  background-color: rgb(0, 0, 0, 0.1);
   padding: 0.3vw 0.55vw;
   margin: 0.5vw;
   border-radius: 10vw;
@@ -84,12 +89,13 @@ const Buttons = styled.div`
   display: inline-block;
   padding-top: 1vw;
 `
-const ProjectInfo = styled.p `
-  padding: 0 0.8vw;
+const ProjectInfo = styled.div`
+  padding: 0 2vw 0 3vw;
   font-size: 0.9vw;
   font-family: Arial;
   line-height: 1.5vw;
   text-align: left;
+  color: white;
 `
 const ProjectImage = styled.img`
   z-index: 3;
@@ -152,19 +158,21 @@ const ButtonsInfoDown = styled(ButtonsInfo)`
 `
 const ProjectSubtitleBlind = styled(ProjectSubtitle)`
   color: white;
-  padding-top: 3vw;
+  padding-top: 6vw;
   font-size: 1.5vw;
 `
 const ProjectSubtitleBlindWine = styled(ProjectSubtitleBlind)`
   font-family: AlexBrushRegular;
+  padding-top: 2vw;
   font-size: 2vw;
 `
 const ProjectSubtitleBlindPsico = styled(ProjectSubtitleBlind)`
   font-family: JosefinBold;
-  padding-top: 3.4vw;
+  padding-top: 4vw;
 `
 const ProjectSubtitleBlindQuiz = styled(ProjectSubtitleBlind)`
   font-family: PoorRichard;
+  padding-top: 4vw;
 `
 
 // markup
@@ -174,56 +182,13 @@ const Projects = () => {
     <ProjectHeader>PROYECTOS</ProjectHeader>
     <Project>
       <div>
-        <IndividualContainer>
-          <BlindContainer>
-          <Blind></Blind>
-          {/* Container project of WINE STORE */}
-          <ProjectSubtitle>Wine store</ProjectSubtitle>
-          <ProjectImage src={wineFirst} alt="Wine store" />
-          <ProjectInfo>Proyecto de ecommerce de productos de la industria vitivinícola.
-            <ul>
-              <li>Envío de mails con Nodemailer.</li>
-              <li>Integración de pasarela de Pago, Mercado Pago.</li>
-              <li>Administración de carrito de compras, gestión de claves.</li>
-            </ul>
-          </ProjectInfo>
-          {/* Container tecnologies & buttons/links */}
-          <ButtonsInfoUp>
-            <ProjectSubtitleBlindWine>Wine store</ProjectSubtitleBlindWine>
-            <Tecnologies>
-              <Tecnology>React</Tecnology>
-              <Tecnology>Redux</Tecnology>
-              <Tecnology>JavaScript</Tecnology>
-              <Tecnology>Express</Tecnology>
-              <Tecnology>PostgreSQL</Tecnology>
-              <Tecnology>Sequelize</Tecnology>
-            </Tecnologies>
-            {/* Button link Repository and deploy */}
-            <Buttons>
-              <ProjectButton href="https://github.com/Dayanara847/ecommerce_winestore">Ver repositorio</ProjectButton>
-              <ProjectButton href="https://web-comm.vercel.app/">Visitar</ProjectButton>
-            </Buttons>
-          </ButtonsInfoUp>
-          </BlindContainer>
-        </IndividualContainer>
-        <IndividualContainer>
+      <IndividualContainer>
         <BlindContainer>
           <Blind></Blind>
           {/* Container project of QUIZAPP */}
           <ProjectSubtitle>QuizApp</ProjectSubtitle>
           <ProjectImage src={quizWeb} alt="Quiz App" />
-          <ProjectInfo>Proyecto de plataforma de uso institucional con creación de evaluaciones online.
-            <ul>
-              <li>Envío de mails con Nodemailer.</li>
-              <li>Administración de usuarios y roles.</li>
-              <li>Versión WEB para uso institucional.</li>
-              <li>Versión Mobile para uso estudiantil.</li>
-            </ul>
-          </ProjectInfo>
-          {/* Container tecnologies & buttons/links */}
-          <ButtonsInfoDown>
-            <ProjectSubtitleBlindQuiz>QuizApp</ProjectSubtitleBlindQuiz>
-            <Tecnologies>
+          <Tecnologies>
               <Tecnology>React</Tecnology>
               <Tecnology>Express</Tecnology>
               <Tecnology>Redux</Tecnology>
@@ -233,6 +198,17 @@ const Projects = () => {
               <Tecnology>Ionic</Tecnology>
               <Tecnology>Angular</Tecnology>
             </Tecnologies>
+          {/* Container tecnologies & buttons/links */}
+          <ButtonsInfoUp>
+            <ProjectSubtitleBlindQuiz>QuizApp</ProjectSubtitleBlindQuiz>
+            <ProjectInfo>Proyecto de plataforma de uso institucional con creación de evaluaciones online.
+            <ul>
+              <li>Envío de mails con Nodemailer.</li>
+              <li>Administración de usuarios y roles.</li>
+              <li>Versión WEB para uso institucional.</li>
+              <li>Versión Mobile para uso estudiantil.</li>
+            </ul>
+          </ProjectInfo>
             {/* Button link Repository and deploy */}
             <Buttons>
               <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio WEB</ProjectButton>
@@ -240,6 +216,34 @@ const Projects = () => {
               <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio BACK</ProjectButton>
               <ProjectButton href="https://quizapp-web-ten.vercel.app/">Visitar</ProjectButton>
             </Buttons>
+          </ButtonsInfoUp>
+          </BlindContainer>
+        </IndividualContainer>
+        <IndividualContainer>
+          <BlindContainer>
+            <Blind></Blind>
+          {/* Container project of WEB PSICÓLOGO */}
+          <ProjectSubtitle>Dr. Alejandro Cifuentes</ProjectSubtitle>
+          <ProjectImage src={psicoWeb} alt="Web psicólogo" />
+          <Tecnologies>
+              <Tecnology>JavaScript</Tecnology>
+              <Tecnology>CSS modules</Tecnology>
+              <Tecnology>React</Tecnology>
+            </Tecnologies>
+          {/* Container tecnologies & buttons/links */}
+          <ButtonsInfoDown>
+            <ProjectSubtitleBlindPsico>Dr. Alejandro Cifuentes</ProjectSubtitleBlindPsico>
+            <ProjectInfo>Web personal de profesional de psicología.
+            <ul>
+              <li>Single Page Application utilizando React.</li>
+              <li>Envío de mails con Nodemailer.</li>
+            </ul>
+          </ProjectInfo>
+            {/* Button link Repository and deploy */}
+            <Buttons>
+              <ProjectButton href="https://github.com/Dayanara847/drcifuFRONTEND">Ver repositorio</ProjectButton>
+              <ProjectButton href="https://drcifu-frontend.vercel.app/">Visitar</ProjectButton>
+              </Buttons>
           </ButtonsInfoDown>
           </BlindContainer>
         </IndividualContainer>
@@ -251,20 +255,20 @@ const Projects = () => {
           {/* Container project of CLIMA APP */}
           <ProjectSubtitle>Clima App</ProjectSubtitle>
           <ProjectImage src={climaFirst} alt="Clima App" />
-          <ProjectInfo>Web conectada con api del clima, para ver el tiempo en distintas ciudades del mundo.
+          <Tecnologies>
+              <Tecnology>React</Tecnology>
+              <Tecnology>JavaScript</Tecnology>
+              <Tecnology>CSS modules</Tecnology>
+            </Tecnologies>
+          {/* Container tecnologies & buttons/links */}
+          <ButtonsInfoUp>
+            <ProjectSubtitleBlind>Clima App</ProjectSubtitleBlind>
+            <ProjectInfo>Web conectada con api del clima, para ver el tiempo en distintas ciudades del mundo.
             <ul>
               <li>Consume datos de API externa.</li>
               <li>Desarrollado con CSS sin uso de librerías externas.</li>
             </ul>
           </ProjectInfo>
-          {/* Container tecnologies & buttons/links */}
-          <ButtonsInfoUp>
-            <ProjectSubtitleBlind>Clima App</ProjectSubtitleBlind>
-            <Tecnologies>
-              <Tecnology>React</Tecnology>
-              <Tecnology>JavaScript</Tecnology>
-              <Tecnology>CSS modules</Tecnology>
-            </Tecnologies>
             {/* Button link Repository and deploy */}
             <Buttons>
               <ProjectButton href="https://github.com/Dayanara847/climaApp">Ver repositorio</ProjectButton>
@@ -275,29 +279,33 @@ const Projects = () => {
         </IndividualContainer>
         <IndividualContainer>
           <BlindContainer>
-            <Blind></Blind>
-          {/* Container project of WEB PSICÓLOGO */}
-          <ProjectSubtitle>Dr. Alejandro Cifuentes</ProjectSubtitle>
-          <ProjectImage src={psicoWeb} alt="Web psicólogo" />
-          <ProjectInfo>Web personal de profesional de psicología.
+          <Blind></Blind>
+          {/* Container project of WINE STORE */}
+          <ProjectSubtitle>Wine store</ProjectSubtitle>
+          <ProjectImage src={wineFirst} alt="Wine store" />
+          {/* Container tecnologies & buttons/links */}
+          <Tecnologies>
+              <Tecnology>React</Tecnology>
+              <Tecnology>Redux</Tecnology>
+              <Tecnology>JavaScript</Tecnology>
+              <Tecnology>Express</Tecnology>
+              <Tecnology>PostgreSQL</Tecnology>
+              <Tecnology>Sequelize</Tecnology>
+            </Tecnologies>
+          <ButtonsInfoDown>
+            <ProjectSubtitleBlindWine>Wine store</ProjectSubtitleBlindWine>
+            <ProjectInfo>Proyecto de ecommerce de productos de la industria vitivinícola.
             <ul>
-              <li>Single Page Application utilizando React.</li>
               <li>Envío de mails con Nodemailer.</li>
+              <li>Integración de pasarela de Pago, Mercado Pago.</li>
+              <li>Administración de carrito de compras, gestión de claves.</li>
             </ul>
           </ProjectInfo>
-          {/* Container tecnologies & buttons/links */}
-          <ButtonsInfoDown>
-            <ProjectSubtitleBlindPsico>Dr. Alejandro Cifuentes</ProjectSubtitleBlindPsico>
-            <Tecnologies>
-              <Tecnology>JavaScript</Tecnology>
-              <Tecnology>CSS modules</Tecnology>
-              <Tecnology>React</Tecnology>
-            </Tecnologies>
             {/* Button link Repository and deploy */}
             <Buttons>
-              <ProjectButton href="https://github.com/Dayanara847/drcifuFRONTEND">Ver repositorio</ProjectButton>
-              <ProjectButton href="https://drcifu-frontend.vercel.app/">Visitar</ProjectButton>
-              </Buttons>
+              <ProjectButton href="https://github.com/Dayanara847/ecommerce_winestore">Ver repositorio</ProjectButton>
+              <ProjectButton href="https://web-comm.vercel.app/">Visitar</ProjectButton>
+            </Buttons>
           </ButtonsInfoDown>
           </BlindContainer>
         </IndividualContainer>
