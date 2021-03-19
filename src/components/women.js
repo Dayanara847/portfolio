@@ -27,7 +27,7 @@ transform: ${prop => `translate(${prop.offsetY / 50}rem, ${-prop.offsetY / 30}re
 `
 const Jumper = styled.img`
 position: absolute;
-top: 20vw;
+top: 15vw;
 left: 11vw;
 width: 4vw;
 display: ${prop => prop.offsetY < 150 ? 'none' : 'inline'};

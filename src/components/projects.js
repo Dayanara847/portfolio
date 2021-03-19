@@ -8,6 +8,8 @@ import psicoWeb from '../images/projects/psicoWeb.png';
 
 // styles
 const ProjectsContainer = styled.div`
+  background-color: rgba(0, 0, 0, 0.03);
+  clip-path: polygon(0 10%, 100% 15%, 100% 100%, 0% 90%);
   width: 100vw;
   height: 70vw;
   display: flex;
