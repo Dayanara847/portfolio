@@ -1,6 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, keyframes } from 'styled-components';
 
 // components
 import Home from '../components/home';
@@ -24,19 +23,17 @@ import Dubai from '../fonts/dubai.ttf';
 import MicrosoftYiBaiti from '../fonts/microsoft-yi-baiti.ttf';
 import LeelawadeeUi from '../fonts/leelawadee-ui.ttf';
 import SansSerif from '../fonts/sans-serif.ttf';
+import ArialicHollow from '../fonts/ArialicHollow.ttf';
 
-/* const GlobalStyle = createGlobalStyle`
-  html, body {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    overflow-x: hidden;
-  } */
-  // styles
+// styles
   const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     overflow-x: hidden;
+  }
+  @font-face {
+    font-family: ArialicHollow;
+    src: url(${ArialicHollow});
   }
 	@font-face {
         font-family: AlexBrushRegular;
@@ -83,22 +80,43 @@ const GlobalContainer = styled.section`
 display: flex;
 flex-direction: column;
 max-width: 100%;
+max-height: 100%;
 `
 const Background = styled.img`
 width: 100vw;
-height: 3940px;
+height: 250vw;
 background-repeat: no-repeat;
 background-size: contain;
 position: absolute;
 background: url(${bgSkyBlue});
+
+@media(max-width: 768px) {
+  display: none;
+}
+`
+const floatingClouds = keyframes`
+0% {
+  opacity: 50%
+}
+50% {
+  opacity: 100%
+}
+100% {
+  opacity: 50%
+}
 `
 const BackgroundUpper = styled.img`
 width: 100vw;
-height: 5100px;
+height: 357vw;
 background-repeat: no-repeat;
 background-size: contain;
 position: absolute;
 background: url(${bgUpper});
+animation: ${floatingClouds} 5s linear infinite;
+
+@media(max-width: 768px) {
+  display: none;
+}
 `
 
 const IndexPage = () => {
@@ -120,7 +138,7 @@ const IndexPage = () => {
         style={{ transform: `translateY(-${offsetY * 0.1}px)` }}
       />
       <BackgroundUpper
-        style={{ transform: `translateY(-${offsetY * 0.5}px)` }}
+        style={{ transform: `translateY(-${offsetY * 0.7}px)` }}
       />
       <Women offsetY={offsetY} />
       <Home />

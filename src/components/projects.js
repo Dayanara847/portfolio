@@ -6,10 +6,10 @@ import wineFirst from '../images/projects/wine1.png';
 import quizWeb from '../images/projects/quizAppWeb.png';
 import psicoWeb from '../images/projects/psicoWeb.png';
 
+//clip-path: polygon(0 10%, 100% 15%, 100% 100%, 0% 90%);
 // styles
 const ProjectsContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.03);
-  clip-path: polygon(0 10%, 100% 15%, 100% 100%, 0% 90%);
   width: 100vw;
   height: 70vw;
   display: flex;
@@ -17,6 +17,10 @@ const ProjectsContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10vw 0;
+
+  @media(max-width: 768px) {
+    height: auto;
+  }
 `
 const Project = styled.div`
   z-index: 2;
@@ -26,16 +30,24 @@ const Project = styled.div`
   align-items: center;
   margin: 1vw;
   width: 55vw;
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+  }
 `
 const ProjectHeader = styled.h1`
   z-index: 2;
   font-size: 2.5vw;
-  font-family: Arial;
+  font-family: ArialicHollow;
 `
 const ProjectSubtitle = styled.h3`
   z-index: 2;
   padding-top: 1vw;
   font-family: Arial;
+
+  @media(max-width: 768px) {
+    padding-top: 0;
+  }
 `
 const IndividualContainer = styled.div`
   height: 28vw;
@@ -44,12 +56,13 @@ const IndividualContainer = styled.div`
   overflow: hidden;
   border: rgba(0, 0, 0, 0.2) solid 0.1vw;
   border-radius: 1vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  &:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  @media(max-width: 768px) {
+    height: 65vw;
   }
-  `
-  const BlindContainer = styled.div`
+`
+const BlindContainer = styled.div`
   margin-top: -31vw;
   
   ${IndividualContainer}:hover & {
@@ -85,11 +98,15 @@ const Tecnology = styled.p`
   padding: 0.3vw 0.55vw;
   margin: 0.5vw;
   border-radius: 10vw;
+
+  @media(max-width: 768px) {
+    font-size: 2vw;
+    padding: 0.5vw 1.5vw;
+  }
 `
 const Buttons = styled.div`
   height: 10.5vw;
   display: inline-block;
-  padding-top: 1vw;
 `
 const ProjectInfo = styled.div`
   padding: 0 2vw 0 3vw;
@@ -106,6 +123,10 @@ const ProjectImage = styled.img`
 
   ${IndividualContainer}:hover & {
     opacity: 0.3;
+  }
+
+  @media(max-width: 768px) {
+    width: 60vw;
   }
 `
 const ProjectButton = styled.a`
@@ -127,6 +148,11 @@ const ProjectButton = styled.a`
 
   ${IndividualContainer}:hover & {
     display: inline-block;
+  }
+
+  @media(max-width: 768px) {
+    color: black;
+    border: 0.1vw solid white;
   }
 `
 const ButtonsInfo = styled.div`
@@ -151,12 +177,16 @@ const ButtonsInfo = styled.div`
     -ms-transition-property: opacity;
     -ms-transition-duration: 3s;
   }
+
+  @media(max-width: 768px) {
+    opacity: 100;
+  }
 `
 const ButtonsInfoUp = styled(ButtonsInfo)`
-  top: 71vw;
+  top: 65vw;
 `
 const ButtonsInfoDown = styled(ButtonsInfo)`
-  top: 102.5vw;
+  top: 95.5vw;
 `
 const ProjectSubtitleBlind = styled(ProjectSubtitle)`
   color: white;
@@ -183,11 +213,12 @@ const Projects = () => {
   <ProjectsContainer>
     <ProjectHeader>PROYECTOS</ProjectHeader>
     <Project>
+
       <div>
+      {/* Container project of QUIZAPP */}
       <IndividualContainer>
         <BlindContainer>
           <Blind></Blind>
-          {/* Container project of QUIZAPP */}
           <ProjectSubtitle>QuizApp</ProjectSubtitle>
           <ProjectImage src={quizWeb} alt="Quiz App" />
           <Tecnologies>
@@ -199,32 +230,34 @@ const Projects = () => {
               <Tecnology>Sequelize</Tecnology>
               <Tecnology>Ionic</Tecnology>
               <Tecnology>Angular</Tecnology>
-            </Tecnologies>
+          </Tecnologies>
           {/* Container tecnologies & buttons/links */}
           <ButtonsInfoUp>
-            <ProjectSubtitleBlindQuiz>QuizApp</ProjectSubtitleBlindQuiz>
-            <ProjectInfo>Proyecto de plataforma de uso institucional con creación de evaluaciones online.
-            <ul>
-              <li>Envío de mails con Nodemailer.</li>
-              <li>Administración de usuarios y roles.</li>
-              <li>Versión WEB para uso institucional.</li>
-              <li>Versión Mobile para uso estudiantil.</li>
-            </ul>
-          </ProjectInfo>
-            {/* Button link Repository and deploy */}
-            <Buttons>
-              <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio WEB</ProjectButton>
-              <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio APP</ProjectButton>
-              <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio BACK</ProjectButton>
-              <ProjectButton href="https://quizapp-web-ten.vercel.app/">Visitar</ProjectButton>
-            </Buttons>
+              <ProjectSubtitleBlindQuiz>QuizApp</ProjectSubtitleBlindQuiz>
+              <ProjectInfo>Proyecto de plataforma de uso institucional con creación de evaluaciones online.
+                <ul>
+                  <li>Envío de mails con Nodemailer.</li>
+                  <li>Administración de usuarios y roles.</li>
+                  <li>Versión WEB para uso institucional.</li>
+                  <li>Versión Mobile para uso estudiantil.</li>
+                </ul>
+              </ProjectInfo>
+              {/* Button link Repository and deploy */}
+              <Buttons>
+                <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio WEB</ProjectButton>
+                <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio APP</ProjectButton>
+                <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio BACK</ProjectButton>
+                <ProjectButton href="https://quizapp-web-ten.vercel.app/">Visitar</ProjectButton>
+              </Buttons>
           </ButtonsInfoUp>
-          </BlindContainer>
-        </IndividualContainer>
+        </BlindContainer>
+      </IndividualContainer>
+
+
+        {/* Container project of WEB PSICÓLOGO */}
         <IndividualContainer>
           <BlindContainer>
             <Blind></Blind>
-          {/* Container project of WEB PSICÓLOGO */}
           <ProjectSubtitle>Dr. Alejandro Cifuentes</ProjectSubtitle>
           <ProjectImage src={psicoWeb} alt="Web psicólogo" />
           <Tecnologies>
@@ -238,7 +271,7 @@ const Projects = () => {
             <ProjectInfo>Web personal de profesional de psicología.
             <ul>
               <li>Single Page Application utilizando React.</li>
-              <li>Envío de mails con Nodemailer.</li>
+              <li>Envío de mails con EmailJS.</li>
             </ul>
           </ProjectInfo>
             {/* Button link Repository and deploy */}
@@ -250,11 +283,13 @@ const Projects = () => {
           </BlindContainer>
         </IndividualContainer>
       </div>
+
+
       <div>
+        {/* Container project of CLIMA APP */}
         <IndividualContainer>
           <BlindContainer>
             <Blind></Blind>
-          {/* Container project of CLIMA APP */}
           <ProjectSubtitle>Clima App</ProjectSubtitle>
           <ProjectImage src={climaFirst} alt="Clima App" />
           <Tecnologies>
@@ -279,10 +314,12 @@ const Projects = () => {
           </ButtonsInfoUp>
           </BlindContainer>
         </IndividualContainer>
+
+
+        {/* Container project of WINE STORE */}
         <IndividualContainer>
           <BlindContainer>
           <Blind></Blind>
-          {/* Container project of WINE STORE */}
           <ProjectSubtitle>Wine store</ProjectSubtitle>
           <ProjectImage src={wineFirst} alt="Wine store" />
           {/* Container tecnologies & buttons/links */}

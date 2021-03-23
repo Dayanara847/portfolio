@@ -16,10 +16,20 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     padding-top: 7vw;
+
+    @media(max-width: 768px) {
+        height: 100vh;
+      }
 `
 const ContactHeader = styled.h1`
-    padding-bottom: 1vw;
+    font-family: ArialicHollow;
+    margin-bottom: 0;
 `
+const Comment = styled.p`
+    font-family: Arial;
+    font-size: 0.9vw;
+    margin-bottom: 1.7vw;
+` 
 const InfoContact = styled.div`
     display: flex;
     flex-direction: column;
@@ -108,6 +118,7 @@ const Contact = () => {
 return (
     <Container>
         <ContactHeader>¿HABLAMOS?</ContactHeader>
+        <Comment>Si quieres contactarte conmigo no dudes en escribirme!</Comment>
         <InfoContact>
             <FormGroup id="contact_form" onSubmit={sendEmail}>
                 <Label>Nombre</Label>

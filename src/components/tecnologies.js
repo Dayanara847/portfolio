@@ -50,6 +50,10 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     height: 50vw;
+
+    @media(max-width: 768px) {
+        height: 100vh;
+      }
 `
 const TecnologiesContainer = styled.div`
     width: 100vw;
@@ -61,6 +65,7 @@ const TecnologiesContainer = styled.div`
 `
 const TecnologiesHeader = styled.h1`
     padding-bottom: 6vw;
+    font-family: ArialicHollow;
 `
 const ImageContainer = styled.div`
     display: flex;
@@ -84,10 +89,10 @@ const TecnologyName = styled.p`
     
     ${ImageContainer}:hover & {
         opacity: 100;
-        -webkit-transition: opacity 3s ease-out;
-        -moz-transition: opacity 3s ease-out;
-        -o-transition: opacity 3s ease-out;
-        -ms-transition: opacity 3s ease-out;
+        -webkit-transition: opacity 2s ease-out;
+        -moz-transition: opacity 2s ease-out;
+        -o-transition: opacity 2s ease-out;
+        -ms-transition: opacity 2s ease-out;
     }
 `
 const Post = styled.span`

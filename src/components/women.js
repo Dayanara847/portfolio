@@ -10,12 +10,17 @@ import runner from '../images/women/running.png';
 import sitting from '../images/women/sitting.png';
 
 // styles
+const ContainerWomen = styled.div`
+    @media(max-width: 768px) {
+        display: none;
+    }
+`
 const Rock = styled.img`
 position: absolute;
 top: 34.3vw;
 left: -0.5vw;
 width: 10vw;
-transform: ${prop => `translateY(${-prop.offsetY / 30}rem)`};
+transform: ${prop => `translateY(${-prop.offsetY / 30}vw)`};
 `
 const Runner = styled.img`
 position: absolute;
@@ -23,7 +28,7 @@ top: 29.5vw;
 left: 1vw;
 width: 4vw;
 display: ${prop => prop.offsetY < 150 ? 'inline' : 'none'};
-transform: ${prop => `translate(${prop.offsetY / 50}rem, ${-prop.offsetY / 30}rem)`};
+transform: ${prop => `translate(${prop.offsetY / 50}vw, ${-prop.offsetY / 30}vw)`};
 `
 const Jumper = styled.img`
 position: absolute;
@@ -41,29 +46,29 @@ display: ${prop => prop.offsetY < 350 ? 'none' : 'inline'};
 `
 const FallingDown = styled.img`
 position: absolute;
-top: 160rem;
-left: 11rem;
-width: 5rem;
+top: 155vw;
+left: 11vw;
+width: 5vw;
 display: ${prop => prop.offsetY < 1400 ? 'none' : 'inline'};
 `
 const Sitting = styled.img`
 position: absolute;
-top: 220rem;
-left: 11rem;
-width: 5rem;
+top: 225vw;
+left: 11vw;
+width: 5vw;
 display: ${prop => prop.offsetY < 2400 ? 'none' : 'inline'};
 `
 
 const Women = ({ offsetY }) => {
     return (
-        <div>
+        <ContainerWomen>
             <Rock offsetY={offsetY} src={rock} alt="" />
             <Runner offsetY={offsetY} src={runner} alt="" />
             <Jumper offsetY={offsetY} src={jumper} alt="" />
             <FallingDownTop offsetY={offsetY} src={fallingDownTop} alt="" />
             <FallingDown offsetY={offsetY} src={fallingDown} alt="" />
             <Sitting offsetY={offsetY} src={sitting} alt="" />
-        </div>
+        </ContainerWomen>
     )
 };
 

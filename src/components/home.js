@@ -2,20 +2,37 @@ import * as React from "react";
 import styled from 'styled-components';
 
 const MainContainer = styled.div`
-  width: 100vw;
+  padding: 14vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 22vw 0;
+
+  @media(max-width: 768px) {
+    height: 100vh;
+    padding: 0;
+  }
 `
 const Header = styled.h1`
   z-index: 2;
   font-size: 2.5vw;
   font-family: Arial;
+
+  @media(max-width: 768px) {
+    font-size: 5vw;
+  }
+`
+const StyledGreatting = styled.span`
+  font-size: 8vw;
+  font-family: ArialicHollow;
+
+  @media(max-width: 768px) {
+    font-size: 14vw;
+  }
 `
 const StyledText = styled.span`
   color: rgb(1, 180, 240);
+  font-family: ArialicHollow;
 `
 
 // markup
@@ -23,9 +40,11 @@ const Home = () => {
   return (
     <MainContainer>
       <Header>
-        Hola! mi nombre es Dayanara Maurin,
+        <StyledGreatting>Hola!</StyledGreatting>
         <br/>
-        <StyledText>soy Full Stack Web Developer</StyledText>
+        me llamo Dayanara Maurin
+        <br/>
+        <StyledText>y soy Full Stack Web Developer</StyledText>
       </Header>
     </MainContainer>
   )
