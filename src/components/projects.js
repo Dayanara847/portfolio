@@ -6,7 +6,6 @@ import wineFirst from '../images/projects/wine1.png';
 import quizWeb from '../images/projects/quizAppWeb.png';
 import psicoWeb from '../images/projects/psicoWeb.png';
 
-//clip-path: polygon(0 10%, 100% 15%, 100% 100%, 0% 90%);
 // styles
 const ProjectsContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.03);
@@ -39,6 +38,10 @@ const ProjectHeader = styled.h1`
   z-index: 2;
   font-size: 2.5vw;
   font-family: ArialicHollow;
+  
+  @media(max-width: 768px) {
+    font-size: 5vw;
+  }
 `
 const ProjectSubtitle = styled.h3`
   z-index: 2;
@@ -60,6 +63,7 @@ const IndividualContainer = styled.div`
 
   @media(max-width: 768px) {
     height: 65vw;
+    margin-bottom: 5vw;
   }
 `
 const BlindContainer = styled.div`
@@ -79,12 +83,21 @@ const BlindContainer = styled.div`
     -ms-transition-property: margin-top;
     -ms-transition-duration: 1s;
   }
+
+  @media(max-width: 768px) {
+    margin-top: -65.5vw;
+  }
 `
 const Blind = styled.div`
   z-index: 3;
   width: 25.5vw;
   height: 31vw;
   background-color: gray;
+
+  @media(max-width: 768px) {
+    width: 60vw;
+    height: 65vw;
+  }
 `
 const Tecnologies = styled.div`
   height: 5.5vw;
@@ -179,11 +192,16 @@ const ButtonsInfo = styled.div`
   }
 
   @media(max-width: 768px) {
-    opacity: 100;
+    width: 60vw;
+    height: 65vw;
   }
 `
 const ButtonsInfoUp = styled(ButtonsInfo)`
   top: 65vw;
+
+  @media(max-width: 768px) {
+    top: 204vw;
+  }
 `
 const ButtonsInfoDown = styled(ButtonsInfo)`
   top: 95.5vw;

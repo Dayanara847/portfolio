@@ -46,7 +46,7 @@ display: ${prop => prop.offsetY < 350 ? 'none' : 'inline'};
 `
 const FallingDown = styled.img`
 position: absolute;
-top: 155vw;
+top: 155.2vw;
 left: 11vw;
 width: 5vw;
 display: ${prop => prop.offsetY < 1400 ? 'none' : 'inline'};
