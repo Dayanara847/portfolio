@@ -241,7 +241,7 @@ const Projects = () => {
   return (
   <ProjectsContainer>
     <ProjectHeader>PROYECTOS</ProjectHeader>
-    <InfoProjects>Para más información desplaza tu mouse por los proyectos o haz click en ellos (mobile).</InfoProjects>
+    <InfoProjects>Para más información, desplaza tu mouse por los proyectos o haz click en ellos (mobile).</InfoProjects>
     <ProjectGrid>
       {/* Container project of QUIZAPP */}
       <IndividualContainer>

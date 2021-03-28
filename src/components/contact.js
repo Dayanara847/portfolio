@@ -18,7 +18,8 @@ const Container = styled.div`
     padding-top: 7vw;
 
     @media(max-width: 768px) {
-        height: 100vh;
+        clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
+        height: 80vh;
       }
 `
 const ContactHeader = styled.h1`
@@ -82,7 +83,7 @@ const Input = styled.input`
 
     @media(max-width: 768px) {
         font-size: 3.2vw;
-        height: 6vw;
+        height: 6.5vw;
     }
 `
 const Message = styled.textarea`
@@ -97,8 +98,8 @@ const Message = styled.textarea`
     font-size: 0.95vw;
 
     @media(max-width: 768px) {
-        font-size: 2vw;
-        height: 35vw;
+        font-size: 3.2vw;
+        height: 40vw;
     }
 `
 const Button = styled.button`
