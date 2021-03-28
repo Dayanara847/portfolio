@@ -19,7 +19,7 @@ const Header = styled.h1`
   font-family: Arial;
 
   @media(max-width: 768px) {
-    font-size: 5vw;
+    font-size: 5.5vw;
   }
 `
 const StyledGreatting = styled.span`
@@ -27,7 +27,7 @@ const StyledGreatting = styled.span`
   font-family: ArialicHollow;
 
   @media(max-width: 768px) {
-    font-size: 14vw;
+    font-size: 14.5vw;
   }
 `
 const StyledText = styled.span`

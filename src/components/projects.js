@@ -38,7 +38,7 @@ const ProjectHeader = styled.h1`
   margin-bottom: 0;
   
   @media(max-width: 768px) {
-    font-size: 5vw;
+    font-size: 6vw;
   }
 `
 const InfoProjects = styled.p`
@@ -47,8 +47,9 @@ const InfoProjects = styled.p`
   text-align: center;
 
   @media(max-width: 768px) {
-    font-size: 2vw;
-    max-width: 50vw;
+    font-size: 3vw;
+    max-width: 70vw;
+    line-height: 4.5vw;
   }
 `
 const IndividualContainer = styled.div`
@@ -62,8 +63,8 @@ const IndividualContainer = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   @media(max-width: 768px) {
-    height: 65vw;
-    width: 60vw;
+    height: 75vw;
+    width: 70vw;
     margin-bottom: 5vw;
   }
 `
@@ -86,7 +87,7 @@ const BlindContainer = styled.div`
   }
 
   @media(max-width: 768px) {
-    margin-top: -71vw;
+    margin-top: -82vw;
 
     ${IndividualContainer}:hover & {
       margin-top: -4.5vw;
@@ -110,8 +111,9 @@ const Blind = styled.div`
   background-color: gray;
 
   @media(max-width: 768px) {
-    width: 60vw;
-    height: 66vw;
+    max-width: 100%;
+    height: 77vw;
+    padding: 0 5vw;
   }
 `
 const Tecnologies = styled.div`
@@ -146,7 +148,7 @@ const ProjectInfo = styled.div`
 
   @media(max-width: 768px) {
     font-size: 2.5vw;
-    line-height: 3.2vw;
+    line-height: 4vw;
   }
 `
 const ProjectImage = styled.img`
@@ -159,7 +161,7 @@ const ProjectImage = styled.img`
   }
 
   @media(max-width: 768px) {
-    width: 60vw;
+    width: 100%;
   }
 `
 const ProjectButton = styled.a`
@@ -193,7 +195,7 @@ const ProjectSubtitle = styled.h3`
   font-family: Arial;
 
   @media(max-width: 768px) {
-    padding-top: 3vw;
+    padding-top: 5vw;
     font-size: 3vw;
   }
 `
@@ -241,7 +243,6 @@ const Projects = () => {
     <ProjectHeader>PROYECTOS</ProjectHeader>
     <InfoProjects>Para más información desplaza tu mouse por los proyectos o haz click en ellos (mobile).</InfoProjects>
     <ProjectGrid>
-
       {/* Container project of QUIZAPP */}
       <IndividualContainer>
       <BlindContainer>
@@ -277,8 +278,6 @@ const Projects = () => {
           </Tecnologies>
         </BlindContainer>
       </IndividualContainer>
-
-
         {/* Container project of WEB PSICÓLOGO */}
         <IndividualContainer>
           <BlindContainer>
@@ -305,7 +304,6 @@ const Projects = () => {
             </Tecnologies>
           </BlindContainer>
         </IndividualContainer>
-
         {/* Container project of CLIMA APP */}
         <IndividualContainer>
           <BlindContainer>
@@ -332,8 +330,6 @@ const Projects = () => {
             </Tecnologies>
           </BlindContainer>
         </IndividualContainer>
-
-
         {/* Container project of WINE STORE */}
         <IndividualContainer>
           <BlindContainer>
@@ -365,9 +361,7 @@ const Projects = () => {
             </Tecnologies>
           </BlindContainer>
         </IndividualContainer>
-
     </ProjectGrid>
-
   </ProjectsContainer>
   )
 }

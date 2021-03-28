@@ -27,7 +27,7 @@ const ContactHeader = styled.h1`
     margin-bottom: 0;
 
     @media(max-width: 768px) {
-        font-size: 4.8vw;
+        font-size: 6vw;
     }
 `
 const Comment = styled.p`
@@ -36,7 +36,10 @@ const Comment = styled.p`
     margin-bottom: 1.7vw;
 
     @media(max-width: 768px) {
-        font-size: 2vw;
+        font-size: 3vw;
+        max-width: 70vw;
+        text-align: center;
+        line-height: 4.5vw;
     }
 ` 
 const InfoContact = styled.div`
@@ -52,7 +55,7 @@ const FormGroup = styled.form`
 	width: 25vw;
 
     @media(max-width: 768px) {
-        width: 65vw;
+        width: 66vw;
     }
 `
 const Label = styled.label`
@@ -62,7 +65,8 @@ const Label = styled.label`
     font-size: 0.95vw;
 
     @media(max-width: 768px) {
-        font-size: 2vw;
+        margin-top: 1.2vw;
+        font-size: 3.2vw;
     }
 `
 const Input = styled.input`
@@ -77,8 +81,8 @@ const Input = styled.input`
     font-size: 0.95vw;
 
     @media(max-width: 768px) {
-        font-size: 2vw;
-        height: 5vw;
+        font-size: 3.2vw;
+        height: 6vw;
     }
 `
 const Message = styled.textarea`
@@ -94,7 +98,7 @@ const Message = styled.textarea`
 
     @media(max-width: 768px) {
         font-size: 2vw;
-        height: 30vw;
+        height: 35vw;
     }
 `
 const Button = styled.button`
@@ -122,7 +126,7 @@ const ImgContact = styled.img`
     margin: 0.5vw;
 
     @media(max-width: 768px) {
-        width: 4vw;
+        width: 4.5vw;
     }
 `
 
