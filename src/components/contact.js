@@ -23,12 +23,21 @@ const Container = styled.div`
 `
 const ContactHeader = styled.h1`
     font-family: ArialicHollow;
+    font-size: 2vw;
     margin-bottom: 0;
+
+    @media(max-width: 768px) {
+        font-size: 4.8vw;
+    }
 `
 const Comment = styled.p`
     font-family: Arial;
     font-size: 0.9vw;
     margin-bottom: 1.7vw;
+
+    @media(max-width: 768px) {
+        font-size: 2vw;
+    }
 ` 
 const InfoContact = styled.div`
     display: flex;
@@ -41,12 +50,20 @@ const FormGroup = styled.form`
     display: block;
     position: relative;
 	width: 25vw;
+
+    @media(max-width: 768px) {
+        width: 65vw;
+    }
 `
 const Label = styled.label`
 	margin-bottom: 0.5vw;
     display: block;
     font-family: Arial;
     font-size: 0.95vw;
+
+    @media(max-width: 768px) {
+        font-size: 2vw;
+    }
 `
 const Input = styled.input`
     margin-bottom: 0.5vw;
@@ -58,6 +75,11 @@ const Input = styled.input`
 	width: 100%;
     font-family: Arial;
     font-size: 0.95vw;
+
+    @media(max-width: 768px) {
+        font-size: 2vw;
+        height: 5vw;
+    }
 `
 const Message = styled.textarea`
 	margin-bottom: 0.5vw;
@@ -69,6 +91,11 @@ const Message = styled.textarea`
 	width: 100%;
     font-family: Arial;
     font-size: 0.95vw;
+
+    @media(max-width: 768px) {
+        font-size: 2vw;
+        height: 30vw;
+    }
 `
 const Button = styled.button`
     border: none;
@@ -77,6 +104,11 @@ const Button = styled.button`
     border-radius: 1vw;
     cursor: pointer;
     float: right;
+
+    @media(max-width: 768px) {
+        margin-top: 1vw;
+        padding: 1.7vw;
+    }
 `
 const Links = styled.div`
     display: flex;
@@ -88,6 +120,10 @@ const LinkContact = styled.a`
 const ImgContact = styled.img`
     width: 1.3vw;
     margin: 0.5vw;
+
+    @media(max-width: 768px) {
+        width: 4vw;
+    }
 `
 
 const Contact = () => {
@@ -118,7 +154,7 @@ const Contact = () => {
 return (
     <Container>
         <ContactHeader>¿HABLAMOS?</ContactHeader>
-        <Comment>Si quieres contactarte conmigo no dudes en escribirme!</Comment>
+        <Comment>Si quieres contactarte conmigo, no dudes en escribirme!</Comment>
         <InfoContact>
             <FormGroup id="contact_form" onSubmit={sendEmail}>
                 <Label>Nombre</Label>

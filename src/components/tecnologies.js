@@ -62,10 +62,20 @@ const TecnologiesContainer = styled.div`
     grid-template-rows: 8vw 8vw;
     justify-content: center;
     align-items: center;
+
+    @media(max-width: 768px) {
+        grid-template-columns: repeat(3, 22vw);
+        grid-template-rows: 21vw 21vw;
+    }
 `
 const TecnologiesHeader = styled.h1`
-    padding-bottom: 6vw;
+    padding-bottom: 4.5vw;
+    font-size: 2vw;
     font-family: ArialicHollow;
+
+    @media(max-width: 768px) {
+        font-size: 5vw;
+    }
 `
 const ImageContainer = styled.div`
     display: flex;
@@ -81,6 +91,10 @@ const ImageContainer = styled.div`
 `
 const TecnologyLogo = styled.img `
     width: 100%;
+
+    @media(max-width: 768px) {
+        width: 62%;
+    }
 `
 const TecnologyName = styled.p`
     opacity: 0;
@@ -94,10 +108,18 @@ const TecnologyName = styled.p`
         -o-transition: opacity 2s ease-out;
         -ms-transition: opacity 2s ease-out;
     }
+
+    @media(max-width: 768px) {
+        font-size: 2vw;
+    }
 `
 const Post = styled.span`
     font-family: LeelawadeeUi;
     font-size: 0.9vw;
+
+    @media(max-width: 768px) {
+        font-size: 2vw;
+    }
 `
 
 // Tecnology images & fonts

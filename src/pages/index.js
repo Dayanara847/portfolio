@@ -23,7 +23,7 @@ import Dubai from '../fonts/dubai.ttf';
 import MicrosoftYiBaiti from '../fonts/microsoft-yi-baiti.ttf';
 import LeelawadeeUi from '../fonts/leelawadee-ui.ttf';
 import SansSerif from '../fonts/sans-serif.ttf';
-import ArialicHollow from '../fonts/ArialicHollow.ttf';
+import ArialicHollow from '../fonts/Londrina.ttf';
 
 // styles
   const GlobalStyle = createGlobalStyle`

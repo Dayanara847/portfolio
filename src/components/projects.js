@@ -19,41 +19,41 @@ const ProjectsContainer = styled.div`
 
   @media(max-width: 768px) {
     height: auto;
+    width: 100vw;
   }
 `
-const Project = styled.div`
+const ProjectGrid = styled.div`
   z-index: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 1vw;
-  width: 55vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
   @media(max-width: 768px) {
-    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
   }
 `
 const ProjectHeader = styled.h1`
   z-index: 2;
   font-size: 2.5vw;
   font-family: ArialicHollow;
+  margin-bottom: 0;
   
   @media(max-width: 768px) {
     font-size: 5vw;
   }
 `
-const ProjectSubtitle = styled.h3`
-  z-index: 2;
-  padding-top: 1vw;
+const InfoProjects = styled.p`
+  font-size: 1vw;
   font-family: Arial;
+  text-align: center;
 
   @media(max-width: 768px) {
-    padding-top: 0;
+    font-size: 2vw;
+    max-width: 50vw;
   }
 `
 const IndividualContainer = styled.div`
   height: 28vw;
+  width: 25.5vw;
   margin: 1vw;
   text-align: center;
   overflow: hidden;
@@ -63,14 +63,15 @@ const IndividualContainer = styled.div`
 
   @media(max-width: 768px) {
     height: 65vw;
+    width: 60vw;
     margin-bottom: 5vw;
   }
 `
 const BlindContainer = styled.div`
-  margin-top: -31vw;
+  margin-top: -32vw;
   
   ${IndividualContainer}:hover & {
-    margin-top: 0vw;
+    margin-top: -2vw;
     -webkit-transition-property: margin-top;
     -webkit-transition-duration: 1s;
    
@@ -85,18 +86,32 @@ const BlindContainer = styled.div`
   }
 
   @media(max-width: 768px) {
-    margin-top: -65.5vw;
+    margin-top: -71vw;
+
+    ${IndividualContainer}:hover & {
+      margin-top: -4.5vw;
+      -webkit-transition-property: margin-top;
+      -webkit-transition-duration: 1s;
+     
+      -moz-transition-property: margin-top;
+      -moz-transition-duration: 1s;
+     
+      -o-transition-property: margin-top;
+      -o-transition-duration: 1s;
+     
+      -ms-transition-property: margin-top;
+      -ms-transition-duration: 1s;
+    }
   }
 `
 const Blind = styled.div`
   z-index: 3;
-  width: 25.5vw;
-  height: 31vw;
+  height: 30vw;
   background-color: gray;
 
   @media(max-width: 768px) {
     width: 60vw;
-    height: 65vw;
+    height: 66vw;
   }
 `
 const Tecnologies = styled.div`
@@ -128,6 +143,11 @@ const ProjectInfo = styled.div`
   line-height: 1.5vw;
   text-align: left;
   color: white;
+
+  @media(max-width: 768px) {
+    font-size: 2.5vw;
+    line-height: 3.2vw;
+  }
 `
 const ProjectImage = styled.img`
   z-index: 3;
@@ -164,65 +184,54 @@ const ProjectButton = styled.a`
   }
 
   @media(max-width: 768px) {
-    color: black;
-    border: 0.1vw solid white;
+    font-size: 2.2vw;
   }
 `
-const ButtonsInfo = styled.div`
-  display: grid;
+const ProjectSubtitle = styled.h3`
   z-index: 2;
-  position: absolute;
-  width: 25.5vw;
-  height: 31vw;
-  opacity: 0;
-
-  ${IndividualContainer}:hover & {
-    opacity: 100;
-    -webkit-transition-property: opacity;
-    -webkit-transition-duration: 3s;
-   
-    -moz-transition-property: opacity;
-    -moz-transition-duration: 3s;
-   
-    -o-transition-property: opacity;
-    -o-transition-duration: 3s;
-   
-    -ms-transition-property: opacity;
-    -ms-transition-duration: 3s;
-  }
+  padding-top: 1vw;
+  font-family: Arial;
 
   @media(max-width: 768px) {
-    width: 60vw;
-    height: 65vw;
+    padding-top: 3vw;
+    font-size: 3vw;
   }
-`
-const ButtonsInfoUp = styled(ButtonsInfo)`
-  top: 65vw;
-
-  @media(max-width: 768px) {
-    top: 204vw;
-  }
-`
-const ButtonsInfoDown = styled(ButtonsInfo)`
-  top: 95.5vw;
 `
 const ProjectSubtitleBlind = styled(ProjectSubtitle)`
   color: white;
   padding-top: 6vw;
   font-size: 1.5vw;
+
+  @media(max-width: 768px) {
+    font-size: 3.3vw;
+    padding-top: 12vw;
+  }
 `
 const ProjectSubtitleBlindWine = styled(ProjectSubtitleBlind)`
   font-family: AlexBrushRegular;
-  padding-top: 2vw;
+  padding-top: 3vw;
   font-size: 2vw;
+
+  @media(max-width: 768px) {
+    font-size: 4.7vw;
+    padding-top: 10vw;
+  }
 `
 const ProjectSubtitleBlindPsico = styled(ProjectSubtitleBlind)`
   font-family: JosefinBold;
-  padding-top: 4vw;
-`
+  padding-top: 7.5vw;
+
+  @media(max-width: 768px) {
+    padding-top: 16vw;
+  }
+ `
 const ProjectSubtitleBlindQuiz = styled(ProjectSubtitleBlind)`
   font-family: PoorRichard;
   padding-top: 4vw;
+
+  @media(max-width: 768px) {
+    padding-top: 11vw;
+  }
 `
 
 // markup
@@ -230,13 +239,30 @@ const Projects = () => {
   return (
   <ProjectsContainer>
     <ProjectHeader>PROYECTOS</ProjectHeader>
-    <Project>
+    <InfoProjects>Para más información desplaza tu mouse por los proyectos o haz click en ellos (mobile).</InfoProjects>
+    <ProjectGrid>
 
-      <div>
       {/* Container project of QUIZAPP */}
       <IndividualContainer>
-        <BlindContainer>
-          <Blind></Blind>
+      <BlindContainer>
+      <Blind>
+          <ProjectSubtitleBlindQuiz>QuizApp</ProjectSubtitleBlindQuiz>
+                <ProjectInfo>Proyecto de plataforma de uso institucional con creación de evaluaciones online.
+                  <ul>
+                    <li>Envío de mails con Nodemailer.</li>
+                    <li>Administración de usuarios y roles.</li>
+                    <li>Versión WEB para uso institucional.</li>
+                    <li>Versión Mobile para uso estudiantil.</li>
+                  </ul>
+                </ProjectInfo>
+                {/* Button link Repository and deploy */}
+                <Buttons>
+                  <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio WEB</ProjectButton>
+                  <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio APP</ProjectButton>
+                  <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio BACK</ProjectButton>
+                  <ProjectButton href="https://quizapp-web-ten.vercel.app/">Visitar</ProjectButton>
+                </Buttons>
+          </Blind>
           <ProjectSubtitle>QuizApp</ProjectSubtitle>
           <ProjectImage src={quizWeb} alt="Quiz App" />
           <Tecnologies>
@@ -249,25 +275,6 @@ const Projects = () => {
               <Tecnology>Ionic</Tecnology>
               <Tecnology>Angular</Tecnology>
           </Tecnologies>
-          {/* Container tecnologies & buttons/links */}
-          <ButtonsInfoUp>
-              <ProjectSubtitleBlindQuiz>QuizApp</ProjectSubtitleBlindQuiz>
-              <ProjectInfo>Proyecto de plataforma de uso institucional con creación de evaluaciones online.
-                <ul>
-                  <li>Envío de mails con Nodemailer.</li>
-                  <li>Administración de usuarios y roles.</li>
-                  <li>Versión WEB para uso institucional.</li>
-                  <li>Versión Mobile para uso estudiantil.</li>
-                </ul>
-              </ProjectInfo>
-              {/* Button link Repository and deploy */}
-              <Buttons>
-                <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio WEB</ProjectButton>
-                <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio APP</ProjectButton>
-                <ProjectButton href="https://github.com/Dayanara847/quizApp_WEB">Ver repositorio BACK</ProjectButton>
-                <ProjectButton href="https://quizapp-web-ten.vercel.app/">Visitar</ProjectButton>
-              </Buttons>
-          </ButtonsInfoUp>
         </BlindContainer>
       </IndividualContainer>
 
@@ -275,16 +282,7 @@ const Projects = () => {
         {/* Container project of WEB PSICÓLOGO */}
         <IndividualContainer>
           <BlindContainer>
-            <Blind></Blind>
-          <ProjectSubtitle>Dr. Alejandro Cifuentes</ProjectSubtitle>
-          <ProjectImage src={psicoWeb} alt="Web psicólogo" />
-          <Tecnologies>
-              <Tecnology>JavaScript</Tecnology>
-              <Tecnology>CSS modules</Tecnology>
-              <Tecnology>React</Tecnology>
-            </Tecnologies>
-          {/* Container tecnologies & buttons/links */}
-          <ButtonsInfoDown>
+            <Blind>
             <ProjectSubtitleBlindPsico>Dr. Alejandro Cifuentes</ProjectSubtitleBlindPsico>
             <ProjectInfo>Web personal de profesional de psicología.
             <ul>
@@ -297,26 +295,21 @@ const Projects = () => {
               <ProjectButton href="https://github.com/Dayanara847/drcifuFRONTEND">Ver repositorio</ProjectButton>
               <ProjectButton href="https://drcifu-frontend.vercel.app/">Visitar</ProjectButton>
               </Buttons>
-          </ButtonsInfoDown>
+            </Blind>
+          <ProjectSubtitle>Dr. Alejandro Cifuentes</ProjectSubtitle>
+          <ProjectImage src={psicoWeb} alt="Web psicólogo" />
+          <Tecnologies>
+              <Tecnology>JavaScript</Tecnology>
+              <Tecnology>CSS modules</Tecnology>
+              <Tecnology>React</Tecnology>
+            </Tecnologies>
           </BlindContainer>
         </IndividualContainer>
-      </div>
 
-
-      <div>
         {/* Container project of CLIMA APP */}
         <IndividualContainer>
           <BlindContainer>
-            <Blind></Blind>
-          <ProjectSubtitle>Clima App</ProjectSubtitle>
-          <ProjectImage src={climaFirst} alt="Clima App" />
-          <Tecnologies>
-              <Tecnology>React</Tecnology>
-              <Tecnology>JavaScript</Tecnology>
-              <Tecnology>CSS modules</Tecnology>
-            </Tecnologies>
-          {/* Container tecnologies & buttons/links */}
-          <ButtonsInfoUp>
+            <Blind>
             <ProjectSubtitleBlind>Clima App</ProjectSubtitleBlind>
             <ProjectInfo>Web conectada con api del clima, para ver el tiempo en distintas ciudades del mundo.
             <ul>
@@ -329,7 +322,14 @@ const Projects = () => {
               <ProjectButton href="https://github.com/Dayanara847/climaApp">Ver repositorio</ProjectButton>
               <ProjectButton href="https://clima-app-theta.vercel.app/">Visitar</ProjectButton>
             </Buttons>
-          </ButtonsInfoUp>
+            </Blind>
+          <ProjectSubtitle>Clima App</ProjectSubtitle>
+          <ProjectImage src={climaFirst} alt="Clima App" />
+          <Tecnologies>
+              <Tecnology>React</Tecnology>
+              <Tecnology>JavaScript</Tecnology>
+              <Tecnology>CSS modules</Tecnology>
+            </Tecnologies>
           </BlindContainer>
         </IndividualContainer>
 
@@ -337,7 +337,21 @@ const Projects = () => {
         {/* Container project of WINE STORE */}
         <IndividualContainer>
           <BlindContainer>
-          <Blind></Blind>
+          <Blind>
+            <ProjectSubtitleBlindWine>Wine store</ProjectSubtitleBlindWine>
+              <ProjectInfo>Proyecto de ecommerce de productos de la industria vitivinícola.
+              <ul>
+                <li>Envío de mails con Nodemailer.</li>
+                <li>Integración de pasarela de Pago, Mercado Pago.</li>
+                <li>Administración de carrito de compras, gestión de claves.</li>
+              </ul>
+            </ProjectInfo>
+              {/* Button link Repository and deploy */}
+              <Buttons>
+                <ProjectButton href="https://github.com/Dayanara847/ecommerce_winestore">Ver repositorio</ProjectButton>
+                <ProjectButton href="https://web-comm.vercel.app/">Visitar</ProjectButton>
+              </Buttons>
+          </Blind>
           <ProjectSubtitle>Wine store</ProjectSubtitle>
           <ProjectImage src={wineFirst} alt="Wine store" />
           {/* Container tecnologies & buttons/links */}
@@ -349,25 +363,10 @@ const Projects = () => {
               <Tecnology>PostgreSQL</Tecnology>
               <Tecnology>Sequelize</Tecnology>
             </Tecnologies>
-          <ButtonsInfoDown>
-            <ProjectSubtitleBlindWine>Wine store</ProjectSubtitleBlindWine>
-            <ProjectInfo>Proyecto de ecommerce de productos de la industria vitivinícola.
-            <ul>
-              <li>Envío de mails con Nodemailer.</li>
-              <li>Integración de pasarela de Pago, Mercado Pago.</li>
-              <li>Administración de carrito de compras, gestión de claves.</li>
-            </ul>
-          </ProjectInfo>
-            {/* Button link Repository and deploy */}
-            <Buttons>
-              <ProjectButton href="https://github.com/Dayanara847/ecommerce_winestore">Ver repositorio</ProjectButton>
-              <ProjectButton href="https://web-comm.vercel.app/">Visitar</ProjectButton>
-            </Buttons>
-          </ButtonsInfoDown>
           </BlindContainer>
         </IndividualContainer>
-      </div>
-    </Project>
+
+    </ProjectGrid>
 
   </ProjectsContainer>
   )
