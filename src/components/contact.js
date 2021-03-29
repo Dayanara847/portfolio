@@ -21,6 +21,11 @@ const Container = styled.div`
         clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
         height: 80vh;
       }
+
+    @media(width: 768px) {
+        clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);
+        height: 80vh;
+    }
 `
 const ContactHeader = styled.h1`
     font-family: 'Courier New', Courier, monospace;

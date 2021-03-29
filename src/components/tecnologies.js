@@ -51,6 +51,8 @@ const TecnologiesHeader = styled.h1`
 `
 const TecnologyLogo = styled.img `
     width: 75%;
+    justify-self: center;
+    align-self: center;
 `
 
 // Tecnology images & fonts

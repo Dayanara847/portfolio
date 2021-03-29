@@ -7,10 +7,10 @@ const MainContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 90vw;
 
   @media(max-width: 768px) {
     height: 100vh;
-    padding: 0;
   }
 `
 const Header = styled.h1`
