@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 // images
 import Reactjs from '../images/tecnologies/react.png';
@@ -16,34 +16,6 @@ import PostgreSQL from '../images/tecnologies/postgreSQL.png';
 import Express from '../images/tecnologies/express.png';
 
 // styles
-const floatingEven = keyframes`
-    0% {
-        transform: translate(0%)
-    }
-    33% {
-        transform: translate(1%, -1%)
-    }
-    66% {
-        transform: translate(-2%, 2%)
-    }
-    100% {
-        transform: translate(0%, 0%)
-    }
-`
-const floatingOdd = keyframes`
-    0% {
-        transform: translate(0%)
-    }
-    33% {
-        transform: translate(-1%, -1%)
-    }
-    66% {
-        transform: translate(2%, 2%)
-    }
-    100% {
-        transform: translate(0%, 0%)
-    }
-`
 const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -58,8 +30,8 @@ const Container = styled.div`
 const TecnologiesContainer = styled.div`
     width: 100vw;
     display: grid;
-    grid-template-columns: repeat(6, 8.5vw);
-    grid-template-rows: 8vw 8vw;
+    grid-template-columns: repeat(6, 10vw);
+    grid-template-rows: 10vw 10vw;
     justify-content: center;
     align-items: center;
 
@@ -77,49 +49,8 @@ const TecnologiesHeader = styled.h1`
         font-size: 5vw;
     }
 `
-const ImageContainer = styled.div`
-    display: flex;
-    margin: 2vw;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    animation: ${props => props.number % 2 === 0 ? floatingEven : floatingOdd} 2s linear infinite;
-
-    &:hover {
-        animation: none;
-    }
-`
 const TecnologyLogo = styled.img `
-    width: 100%;
-
-    @media(max-width: 768px) {
-        width: 62%;
-    }
-`
-const TecnologyName = styled.p`
-    opacity: 0;
-    font-family: ${props => props.font};
-    font-size: ${props => props.material ? "0.69vw" : "1vw"};
-    
-    ${ImageContainer}:hover & {
-        opacity: 100;
-        -webkit-transition: opacity 2s ease-out;
-        -moz-transition: opacity 2s ease-out;
-        -o-transition: opacity 2s ease-out;
-        -ms-transition: opacity 2s ease-out;
-    }
-
-    @media(max-width: 768px) {
-        font-size: 2vw;
-    }
-`
-const Post = styled.span`
-    font-family: LeelawadeeUi;
-    font-size: 0.9vw;
-
-    @media(max-width: 768px) {
-        font-size: 2vw;
-    }
+    width: 75%;
 `
 
 // Tecnology images & fonts
@@ -193,11 +124,8 @@ const Tecnologies = () => {
             <TecnologiesContainer>
                     {images.map(image => {
                         return (
-                            <ImageContainer number={Math.floor(Math.random()*(10 + 1))} key={image.id}>
                                 <TecnologyLogo 
                                 src = {image.src} />
-                                <TecnologyName font={image.font} material={image.name === "MATERIAL-UI" ? true : null}> {image.name}{image.post ? <Post>SQL</Post> : null} </TecnologyName>
-                            </ImageContainer>
                         )
                     })}
             </TecnologiesContainer>
