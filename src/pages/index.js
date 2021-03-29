@@ -16,24 +16,12 @@ import bgUpper from '../../public/background-upper.png';
 import AlexBrushRegular from '../fonts/AlexBrush-Regular.ttf';
 import JosefinBold from '../fonts/JosefinSlab-Bold.ttf';
 import PoorRichard from '../fonts/PoorRichard.otf';
-import Corbel from '../fonts/corbel.ttf';
-import TwCenMt from '../fonts/tw-cen-mt.ttf';
-import GillSansUltraBold from '../fonts/gill-sans-ultra-bold.ttf';
-import Dubai from '../fonts/dubai.ttf';
-import MicrosoftYiBaiti from '../fonts/microsoft-yi-baiti.ttf';
-import LeelawadeeUi from '../fonts/leelawadee-ui.ttf';
-import SansSerif from '../fonts/sans-serif.ttf';
-import ArialicHollow from '../fonts/Londrina.ttf';
 
 // styles
   const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     overflow-x: hidden;
-  }
-  @font-face {
-    font-family: ArialicHollow;
-    src: url(${ArialicHollow});
   }
 	@font-face {
         font-family: AlexBrushRegular;
@@ -46,34 +34,6 @@ import ArialicHollow from '../fonts/Londrina.ttf';
   @font-face {
     font-family: PoorRichard;
     src: url(${PoorRichard});
-  }
-  @font-face {
-    font-family: TwCenMt;
-    src: url(${TwCenMt});
-  }
-  @font-face {
-    font-family: Corbel;
-    src: url(${Corbel});
-  }
-  @font-face {
-    font-family: GillSansUltraBold;
-    src: url(${GillSansUltraBold});
-  }
-  @font-face {
-    font-family: Dubai;
-    src: url(${Dubai});
-  }
-  @font-face {
-    font-family: MicrosoftYiBaiti;
-    src: url(${MicrosoftYiBaiti});
-  }
-  @font-face {
-    font-family: LeelawadeeUi;
-    src: url(${LeelawadeeUi});
-  }
-  @font-face {
-    font-family: SansSerif;
-    src: url(${SansSerif});
   }
 `
 const GlobalContainer = styled.section`

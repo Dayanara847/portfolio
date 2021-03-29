@@ -43,7 +43,7 @@ const TecnologiesContainer = styled.div`
 const TecnologiesHeader = styled.h1`
     padding-bottom: 4.5vw;
     font-size: 2vw;
-    font-family: ArialicHollow;
+    font-family: 'Courier New', Courier, monospace;
 
     @media(max-width: 768px) {
         font-size: 5vw;
@@ -58,63 +58,50 @@ const images = [{
     id: 0,
     name: "React",
     src: Reactjs,
-    font: "Arial"
 }, {
     id: 1,
     name: "Redux",
     src: Redux,
-    font: "Arial"
 }, {
     id: 2,
     name: "HTML",
     src: Html,
-    font: "GillSansUltraBold"
 }, {
     id: 3,
     name: "MATERIAL-UI",
     src: Materialui,
-    font: "Corbel"
 }, {
     id: 4,
     name: "Node.js",
     src: Nodejs,
-    font: "Arial"
 }, {
     id: 5,
     name: "Sequelize",
     src: Sequelize,
-    font: "Dubai"
 }, {
     id: 6,
     name: "styled components",
     src: Styledcomponents,
-    font: "Dubai"
 }, {
     id: 7,
     name: "JavaScript",
     src: Javascript,
-    font: "SansSerif"
 }, {
     id: 8,
     name: "Gatsby",
     src: Gatsby,
-    font: "TwCenMt"
 }, {
     id: 9,
     name: "CSS",
     src: Css,
-    font: "GillSansUltraBold"
 }, {
     id: 10,
     name: "Postgre",
-    post: "SQL",
     src: PostgreSQL,
-    font: "MicrosoftYiBaiti"
 }, {
     id: 11,
     name: "Express",
     src: Express,
-    font: "Arial"
 }];
 
 const Tecnologies = () => {

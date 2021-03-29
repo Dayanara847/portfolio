@@ -34,7 +34,7 @@ const ProjectGrid = styled.div`
 const ProjectHeader = styled.h1`
   z-index: 2;
   font-size: 2.5vw;
-  font-family: ArialicHollow;
+  font-family: 'Courier New', Courier, monospace;
   margin-bottom: 0;
   
   @media(max-width: 768px) {

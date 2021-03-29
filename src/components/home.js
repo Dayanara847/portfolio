@@ -24,7 +24,7 @@ const Header = styled.h1`
 `
 const StyledGreatting = styled.span`
   font-size: 8vw;
-  font-family: ArialicHollow;
+  font-family: 'Courier New', Courier, monospace;
 
   @media(max-width: 768px) {
     font-size: 14.5vw;
@@ -32,7 +32,7 @@ const StyledGreatting = styled.span`
 `
 const StyledText = styled.span`
   color: rgb(1, 180, 240);
-  font-family: ArialicHollow;
+  font-family: 'Courier New', Courier, monospace;
 `
 
 // markup

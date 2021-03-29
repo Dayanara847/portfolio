@@ -23,7 +23,7 @@ const Container = styled.div`
       }
 `
 const ContactHeader = styled.h1`
-    font-family: ArialicHollow;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 2vw;
     margin-bottom: 0;
 
