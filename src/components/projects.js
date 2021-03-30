@@ -292,7 +292,7 @@ const Projects = () => {
             {/* Button link Repository and deploy */}
             <Buttons>
               <ProjectButton href="https://github.com/Dayanara847/drcifuFRONTEND">Ver repositorio</ProjectButton>
-              <ProjectButton href="https://drcifu-frontend.vercel.app/">Visitar</ProjectButton>
+              <ProjectButton href="https://dralejandrocifuentes.vercel.app/">Visitar</ProjectButton>
               </Buttons>
             </Blind>
           <ProjectSubtitle>Dr. Alejandro Cifuentes</ProjectSubtitle>
