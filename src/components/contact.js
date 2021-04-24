@@ -5,6 +5,9 @@ import swal from "sweetalert";
 
 import Github from "../images/github.png";
 import LinkedIn from "../images/linkedin.png";
+import curriculum from "../images/cv.png";
+
+import Resume from "../../static/Dayanara Maurin.pdf";
 
 // styles
 const Container = styled.div`
@@ -181,6 +184,9 @@ return (
                 </LinkContact>
                 <LinkContact href="https://www.linkedin.com/in/dayanara-maurin/">
                     <ImgContact src={LinkedIn} alt="" />
+                </LinkContact>
+                <LinkContact href={Resume}>
+                    <ImgContact src={curriculum} alt="" />
                 </LinkContact>
             </Links>
         </InfoContact>
