@@ -180,13 +180,13 @@ return (
             </FormGroup>
             <Links>
                 <LinkContact href="https://github.com/Dayanara847">
-                    <ImgContact src={Github} alt="" />
+                    <ImgContact src={Github} alt="Github" />
                 </LinkContact>
                 <LinkContact href="https://www.linkedin.com/in/dayanara-maurin/">
-                    <ImgContact src={LinkedIn} alt="" />
+                    <ImgContact src={LinkedIn} alt="LinkedIn" />
                 </LinkContact>
-                <LinkContact href={Resume}>
-                    <ImgContact src={curriculum} alt="" />
+                <LinkContact href={Resume} alt="Link a curriculum">
+                    <ImgContact src={curriculum} alt="CV" />
                 </LinkContact>
             </Links>
         </InfoContact>
