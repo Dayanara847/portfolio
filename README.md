@@ -1,5 +1,2 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
+
+![imagen](https://user-images.githubusercontent.com/66930743/118046694-aa87ab80-b347-11eb-909e-710520c2be95.png)
