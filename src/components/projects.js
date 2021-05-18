@@ -318,7 +318,7 @@ const Projects = () => {
             {/* Button link Repository and deploy */}
             <Buttons>
               <ProjectButton href="https://github.com/Dayanara847/climaApp">Ver repositorio</ProjectButton>
-              <ProjectButton href="https://clima-app-theta.vercel.app/">Visitar</ProjectButton>
+              <ProjectButton href="https://henryclima-app.herokuapp.com/">Visitar</ProjectButton>
             </Buttons>
             </Blind>
           <ProjectSubtitle>Clima App</ProjectSubtitle>
