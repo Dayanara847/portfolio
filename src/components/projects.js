@@ -265,7 +265,7 @@ const Projects = () => {
                 </Buttons>
           </Blind>
           <ProjectSubtitle>QuizApp</ProjectSubtitle>
-          <ProjectImage src={quizWeb} alt="Quiz App" />
+          <ProjectImage loading="lazy" src={quizWeb} alt="Quiz App" />
           <Tecnologies>
               <Tecnology>React</Tecnology>
               <Tecnology>Express</Tecnology>
@@ -296,7 +296,7 @@ const Projects = () => {
               </Buttons>
             </Blind>
           <ProjectSubtitle>Dr. Alejandro Cifuentes</ProjectSubtitle>
-          <ProjectImage src={psicoWeb} alt="Web psicólogo" />
+          <ProjectImage loading="lazy" src={psicoWeb} alt="Web psicólogo" />
           <Tecnologies>
               <Tecnology>JavaScript</Tecnology>
               <Tecnology>CSS modules</Tecnology>
@@ -322,7 +322,7 @@ const Projects = () => {
             </Buttons>
             </Blind>
           <ProjectSubtitle>Clima App</ProjectSubtitle>
-          <ProjectImage src={climaFirst} alt="Clima App" />
+          <ProjectImage loading="lazy" src={climaFirst} alt="Clima App" />
           <Tecnologies>
               <Tecnology>React</Tecnology>
               <Tecnology>JavaScript</Tecnology>
@@ -349,7 +349,7 @@ const Projects = () => {
               </Buttons>
           </Blind>
           <ProjectSubtitle>Wine store</ProjectSubtitle>
-          <ProjectImage src={wineFirst} alt="Wine store" />
+          <ProjectImage loading="lazy" src={wineFirst} alt="Wine store" />
           {/* Container tecnologies & buttons/links */}
           <Tecnologies>
               <Tecnology>React</Tecnology>
